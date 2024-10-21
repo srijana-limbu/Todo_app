@@ -30,7 +30,15 @@ function App() {
   
 
   const toggleComplete = (id) => {
-    setTodoS((prev) => prev.map((prevTodo) => prevTodo === id ? {...prevTodo, completed: !prevTodo.completed}: prevTodo))
+    // console.log(id)
+
+    setTodoS((prev) =>
+      prev.map((prevTodo) =>
+        prevTodo.id === id
+          ? { ...prevTodo, completed: !prevTodo.completed }
+          : prevTodo
+      )
+    );
   }
   
   useEffect(() => {
